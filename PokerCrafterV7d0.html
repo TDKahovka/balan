@@ -92925,3 +92925,239 @@ console.log('[v7.13] Combo Ref + Run History UI + Deck Inspector + Keyboard + St
 </script>
 </body>
 </html>
+
+<!-- AAAA GAME TABLE INTEGRATION START -->
+<script>
+// Интеграция премиум-стилей для игрового стола
+const aaaaTableStyles = `
+/* --- AAAA Game Table Surface --- */
+.aaaa-table-surface {
+    position: relative;
+    background: radial-gradient(circle at center, #1a472a 0%, #0d2b18 40%, #05110a 100%);
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.8), 0 20px 50px rgba(0,0,0,0.5);
+    border-radius: 150px;
+    overflow: hidden;
+    border: 12px solid #2a1a0f;
+    box-shadow: 
+        inset 0 0 0 2px #4a3b2a,
+        0 0 0 4px #1a1a1a,
+        0 30px 60px rgba(0,0,0,0.6);
+}
+
+.aaaa-table-texture {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3h1v1H1V3zm2-2h1v1H3V1z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.aaaa-table-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%; height: 60%;
+    background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: tablePulse 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* --- AAAA Cards (Holographic) --- */
+.aaaa-card {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    border-radius: 12px;
+    box-shadow: 
+        0 4px 8px rgba(0,0,0,0.3),
+        inset 0 0 0 1px rgba(255,255,255,0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27), box-shadow 0.3s;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.aaaa-card::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(
+        45deg, 
+        transparent 40%, 
+        rgba(255,255,255,0.4) 45%, 
+        rgba(255,255,255,0.6) 50%, 
+        transparent 55%
+    );
+    transform: rotate(30deg) translateX(-100%);
+    transition: transform 0.6s;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+.aaaa-card:hover {
+    transform: translateY(-10px) scale(1.05) rotateZ(2deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(255,215,0,0.3);
+}
+
+.aaaa-card:hover::after {
+    transform: rotate(30deg) translateX(100%);
+}
+
+.aaaa-card-back {
+    background: repeating-linear-gradient(
+        45deg,
+        #b91d1d,
+        #b91d1d 10px,
+        #991515 10px,
+        #991515 20px
+    );
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* --- AAAA Chips (Metallic) --- */
+.aaaa-chip {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffd700, #b8860b);
+    border: 4px dashed #fff;
+    box-shadow: 
+        0 5px 10px rgba(0,0,0,0.5),
+        inset 0 0 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #5c4003;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s;
+}
+
+.aaaa-chip::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.aaaa-chip:hover {
+    transform: scale(1.2) rotate(15deg);
+    z-index: 20;
+}
+
+/* --- Animations --- */
+@keyframes tablePulse {
+    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.9); }
+    50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes cardDeal {
+    0% { transform: translateY(-200px) scale(0.5) rotate(180deg); opacity: 0; }
+    60% { transform: translateY(10px) scale(1.1) rotate(-5deg); opacity: 1; }
+    100% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+}
+
+.aaaa-deal-anim {
+    animation: cardDeal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* --- Pot Display --- */
+.aaaa-pot-display {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,215,0,0.3);
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: #ffd700;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px rgba(255,215,0,0.2);
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+`;
+
+// Внедрение стилей
+const styleSheet = document.createElement("style");
+styleSheet.innerText = aaaaTableStyles;
+document.head.appendChild(styleSheet);
+
+// Функция обновления таблицы на премиум
+function upgradeToAAAATable() {
+    const tableContainer = document.querySelector('.game-table') || document.querySelector('#poker-table');
+    if (!tableContainer) {
+        console.log("AAAA: Таблица не найдена, ждем рендера...");
+        setTimeout(upgradeToAAAATable, 500);
+        return;
+    }
+
+    // Добавляем классы поверхности
+    if (!tableContainer.classList.contains('aaaa-table-surface')) {
+        tableContainer.classList.add('aaaa-table-surface');
+        
+        // Добавляем текстуру и свечение
+        const texture = document.createElement('div');
+        texture.className = 'aaaa-table-texture';
+        tableContainer.appendChild(texture);
+
+        const glow = document.createElement('div');
+        glow.className = 'aaaa-table-glow';
+        tableContainer.appendChild(glow);
+    }
+
+    // Обновляем карты
+    document.querySelectorAll('.card, .playing-card').forEach(card => {
+        if (!card.classList.contains('aaaa-card')) {
+            card.classList.add('aaaa-card');
+            // Добавляем случайную задержку анимации при появлении
+            if (!card.style.animationDelay) {
+                card.style.animationDelay = Math.random() * 0.2 + 's';
+            }
+        }
+    });
+
+    // Обновляем фишки
+    document.querySelectorAll('.chip, .game-chip').forEach(chip => {
+        if (!chip.classList.contains('aaaa-chip')) {
+            chip.classList.add('aaaa-chip');
+        }
+    });
+
+    console.log("AAAA: Игровой стол обновлен до премиум-класса!");
+}
+
+// Запуск после загрузки
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', upgradeToAAAATable);
+} else {
+    upgradeToAAAATable();
+}
+
+// Интерцептор создания карт для будущих анимаций
+const originalCreateCard = window.createCardElement || null;
+window.createCardElement = function(rank, suit, isHidden) {
+    let card;
+    if (originalCreateCard) {
+        card = originalCreateCard(rank, suit, isHidden);
+    } else {
+        // Fallback если оригинальной функции нет
+        card = document.createElement('div');
+        card.className = 'card ' + (isHidden ? 'card-back' : '');
+        card.innerHTML = isHidden ? '' : `${rank}${suit}`;
+    }
+    
+    if (card) {
+        card.classList.add('aaaa-card');
+        if (!isHidden) card.classList.add('aaaa-deal-anim');
+    }
+    return card;
+};
+</script>
+<!-- AAAA GAME TABLE INTEGRATION END -->
