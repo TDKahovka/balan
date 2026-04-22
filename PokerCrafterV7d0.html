@@ -29553,6 +29553,7 @@ const LOADING_TIPS = {
 
 function LoadingScreen({ onDone }) {
   const [progress, setProgress] = React.useState(0);
+  const [phase, setPhase] = React.useState(0);
   // v6.18 QA: pick tip in current locale
   const [tip] = React.useState(() => {
     var loc = (typeof L10N !== 'undefined' && L10N._loc) || 'en';
@@ -29565,65 +29566,118 @@ function LoadingScreen({ onDone }) {
     const t = setInterval(() => {
       p += Math.random() * 18 + 5;
       setProgress(Math.min(100, Math.round(p)));
+      if (p >= 30 && phase === 0) setPhase(1);
+      if (p >= 70 && phase === 1) setPhase(2);
       if (p >= 100) { clearInterval(t); setTimeout(onDone, 400); }
     }, 120);
     return () => clearInterval(t);
   }, []);
 
+  const loc = (typeof L10N !== 'undefined' && L10N._loc) || 'en';
+  const loadingText = {ru:'Загрузка',ua:'Завантаження',en:'Loading',zhs:'加载中',zht:'載入中',ar:'جار التحميل',es:'Cargando',fr:'Chargement',de:'Laden',pt:'Carregando',ja:'読み込み中',ko:'로딩 중',tr:'Yükleniyor',pl:'Ładowanie',it:'Caricamento',nl:'Laden',th:'กำลังโหลด'}[loc] || 'Loading';
+  const versionText = {ru:'AAAA EDITION 2026',ua:'AAAA EDITION 2026',en:'AAAA EDITION 2026',zhs:'AAAA 版 2026',zht:'AAAA 版 2026',ar:'إصدار AAAA 2026',es:'EDICIÓN AAAA 2026',fr:'ÉDITION AAAA 2026',de:'AAAA AUSGABE 2026',pt:'EDIÇÃO AAAA 2026',ja:'AAAA エディション 2026',ko:'AAAA 에디션 2026',tr:'AAAA SÜRÜM 2026',pl:'WYDANIE AAAA 2026',it:'EDIZIONE AAAA 2026',nl:'AAAA EDITIE 2026',th:'รุ่น AAAA 2026'}[loc] || 'AAAA EDITION 2026';
+
   return (
-    <div style={{
-      position:'fixed',inset:0,zIndex:9999,
-      background:'linear-gradient(160deg,#08060F 0%,#16122A 50%,#08060F 100%)',
-      display:'flex',flexDirection:'column',alignItems:'center',
-      justifyContent:'center',gap:'1.5rem',
-    }}>
-      {/* Logo */}
-      <div style={{textAlign:'center'}}>
-        <div style={{
-          fontSize:'3rem',marginBottom:'.5rem',
-          animation:'logoSpin 3s ease-in-out infinite',
-          display:'inline-block',
-        }}>🃏</div>
-        <div style={{
-          fontFamily:'Cinzel,serif',fontSize:'1.5rem',fontWeight:900,
-          background:'linear-gradient(135deg,#FFD700,#FFA500,#FFD700)',
-          WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',
-          backgroundClip:'text',backgroundSize:'200%',
-          animation:'goldFlow 3s ease-in-out infinite',
-          letterSpacing:'.2em',
-        }}>POKER CRAFTER</div>
-        <div style={{fontSize:'.6rem',color:'rgba(147,112,219,.6)',
-          letterSpacing:'.3em',marginTop:'.25rem'}}>ULTIMATE EDITION</div>
-      </div>
-
-      {/* Progress bar (с оценкой времени — из руководства §2.6) */}
-      <div style={{width:'min(16rem,80vw)'}}>
-        <div style={{height:'.375rem',background:'rgba(255,255,255,.08)',
-          borderRadius:'1rem',overflow:'hidden',marginBottom:'.5rem'}}>
-          <div style={{height:'100%',width:`${progress}%`,
-            background:'linear-gradient(90deg,rgba(147,112,219,.7),rgba(200,160,255,.9))',
-            borderRadius:'1rem',transition:'width .15s ease',
-            boxShadow:'0 0 8px rgba(147,112,219,.4)'}}/>
-        </div>
-        <div style={{display:'flex',justifyContent:'space-between',
-          fontSize:'.55rem',color:'rgba(255,255,255,.25)'}}>
-          <span>Загрузка...</span>
-          <span>{progress}%</span>
-        </div>
-      </div>
-
-      {/* Tip */}
+    <div className="aaaa-premium-bg">
+      <div className="aaaa-particles" />
+      <div className="aaaa-orb aaaa-orb-1" />
+      <div className="aaaa-orb aaaa-orb-2" />
+      <div className="aaaa-orb aaaa-orb-3" />
+      
       <div style={{
-        maxWidth:'min(20rem,85vw)',padding:'.75rem 1rem',textAlign:'center',
-        background:'rgba(147,112,219,.06)',
-        border:'1px solid rgba(147,112,219,.15)',borderRadius:'.75rem',
+        position:'relative',zIndex:10,width:'100%',height:'100%',
+        display:'flex',flexDirection:'column',alignItems:'center',
+        justifyContent:'center',gap:'2rem',padding:'1rem',
       }}>
-        <div style={{fontSize:'.55rem',color:'rgba(147,112,219,.5)',
-          marginBottom:'.375rem',fontFamily:'Cinzel,serif',letterSpacing:'.1em'}}>
-          💡 СОВЕТ
+        {/* AAAA Logo with 3D effect */}
+        <div style={{textAlign:'center',transformStyle:'preserve-3d',perspective:'1000px'}}>
+          <div style={{
+            fontSize:'clamp(4rem,12vw,6rem)',marginBottom:'1rem',
+            animation:'logoPulse 2s ease-in-out infinite, logoFloat 3s ease-in-out infinite',
+            display:'inline-block',filter:'drop-shadow(0 0 30px rgba(255,215,0,0.5))',
+            transform:'rotateY(0deg)',backfaceVisibility:'visible',
+          }}>🃏</div>
+          <div style={{
+            fontFamily:'Cinzel Decorative,Cinzel,serif',fontSize:'clamp(1.5rem,4vw,2.5rem)',fontWeight:900,
+            background:'linear-gradient(135deg,#FFD700 0%,#FFA500 30%,#FFD700 50%,#FFA500 70%,#FFD700 100%)',
+            WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',
+            backgroundSize:'200% auto',animation:'goldFlow 3s ease-in-out infinite',
+            letterSpacing:'.3em',textShadow:'0 0 40px rgba(255,215,0,0.4)',
+            filter:'drop-shadow(0 0 20px rgba(255,215,0,0.3))',
+          }}>POKER CRAFTER</div>
+          <div style={{
+            fontFamily:'Cinzel,serif',fontSize:'clamp(.7rem,2vw,1rem)',
+            background:'linear-gradient(90deg,rgba(147,112,219,.8),rgba(200,160,255,1),rgba(147,112,219,.8))',
+            WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',
+            letterSpacing:'.5em',marginTop:'.5rem',opacity:.9,
+            animation:'shineText 4s linear infinite',
+          }}>{versionText}</div>
         </div>
-        <div style={{fontSize:'.65rem',color:'rgba(255,255,255,.55)',lineHeight:1.6}}>
-          {tip}
+
+        {/* Premium Progress bar */}
+        <div style={{width:'min(20rem,85vw)'}}>
+          <div style={{position:'relative',height:'.5rem',background:'rgba(255,255,255,.05)',
+            borderRadius:'2rem',overflow:'hidden',boxShadow:'inset 0 2px 10px rgba(0,0,0,.5)',
+            border:'1px solid rgba(255,215,0,.1)'}}>
+            <div style={{position:'absolute',inset:0,
+              background:'linear-gradient(90deg,transparent,rgba(255,215,0,.3),transparent)',
+              animation:'shimmer 2s linear infinite'}}/>
+            <div style={{height:'100%',width:`${progress}%`,
+              background:'linear-gradient(90deg,#9400D3 0%,#DA70D6 30%,#FFD700 60%,#DA70D6 80%,#9400D3 100%)',
+              borderRadius:'2rem',transition:'width .2s ease-out',
+              boxShadow:'0 0 20px rgba(218,112,214,.6),0 0 40px rgba(255,215,0,.4)',
+              position:'relative',overflow:'hidden'}}>
+              <div style={{position:'absolute',right:0,top:0,bottom:0,width:'100px',
+                background:'linear-gradient(90deg,transparent,rgba(255,255,255,.4))',
+                transform:'skewX(-20deg)'}}/>
+            </div>
+          </div>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',
+            marginTop:'.75rem',fontFamily:'Cinzel,serif'}}>
+            <span style={{fontSize:'clamp(.6rem,2vw,.75rem)',color:'rgba(200,160,255,.8)',
+              letterSpacing:'.1em',textShadow:'0 0 10px rgba(147,112,219,.5)'}}>
+              {loadingText}...
+            </span>
+            <span style={{fontSize:'clamp(.7rem,2vw,.9rem)',fontWeight:700,
+              background:'linear-gradient(135deg,#FFD700,#FFA500)',
+              WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',
+              fontFamily:'JetBrains Mono,monospace',textShadow:'0 0 20px rgba(255,215,0,.3)'}}>
+              {progress}%
+            </span>
+          </div>
+        </div>
+
+        {/* Tip card with holo effect */}
+        <div style={{
+          maxWidth:'min(24rem,90vw)',padding:'1.25rem',textAlign:'center',
+          background:'linear-gradient(145deg,rgba(147,112,219,.08),rgba(75,0,130,.06))',
+          border:'1px solid rgba(147,112,219,.2)',borderRadius:'1.25rem',
+          backdropFilter:'blur(20px)',boxShadow:'0 10px 40px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1)',
+          position:'relative',overflow:'hidden',
+        }}>
+          <div style={{position:'absolute',inset:-2,
+            background:'linear-gradient(45deg,transparent 30%,rgba(255,215,0,.1) 50%,transparent 70%)',
+            backgroundSize:'200% 200%',animation:'holoRotate 3s linear infinite',pointerEvents:'none'}}/>
+          <div style={{position:'relative',zIndex:1}}>
+            <div style={{fontSize:'clamp(.6rem,2vw,.7rem)',color:'rgba(147,112,219,.7)',
+              marginBottom:'.5rem',fontFamily:'Cinzel,serif',letterSpacing:'.2em',
+              textTransform:'uppercase',textShadow:'0 0 10px rgba(147,112,219,.3)'}}>
+              💡 {loc==='ru'?'СОВЕТ':loc==='ua'?'ПОРАДА':'TIP'}
+            </div>
+            <div style={{fontSize:'clamp(.7rem,2vw,.85rem)',color:'rgba(255,255,255,.7)',lineHeight:1.7,
+              fontFamily:'Inter,sans-serif',textShadow:'0 0 20px rgba(255,255,255,.1)'}}>
+              {tip}
+            </div>
+          </div>
+        </div>
+
+        {/* Phase indicators */}
+        <div style={{display:'flex',gap:'.5rem',marginTop:'1rem'}}>
+          {[0,1,2].map(i=>(
+            <div key={i} style={{width:phase>i?'12px':'8px',height:phase>i?'12px':'8px',
+              borderRadius:'50%',background:phase>i?'#FFD700':'rgba(255,215,0,.2)',
+              transition:'all .3s ease',boxShadow:phase>i?'0 0 10px #FFD700':'none'}}/>
+          ))}
         </div>
       </div>
     </div>
