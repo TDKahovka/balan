@@ -93161,3 +93161,136 @@ window.createCardElement = function(rank, suit, isHidden) {
 };
 </script>
 <!-- AAAA GAME TABLE INTEGRATION END -->
+// === AAAA UPDATE: PREMIUM PARTICLE SYSTEM & MAGNETIC BUTTONS ===
+
+(function() {
+    console.log("🚀 Initializing AAAA Particle System & Magnetic UI...");
+
+    // 1. Dynamic Particle Canvas Injection
+    const createParticleCanvas = () => {
+        const canvas = document.createElement('canvas');
+        canvas.id = 'aaaa-particle-canvas';
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '0';
+        canvas.style.opacity = '0.6';
+        document.body.insertBefore(canvas, document.body.firstChild);
+        return canvas;
+    };
+
+    const canvas = createParticleCanvas();
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let width, height;
+
+    const resize = () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+        constructor() {
+            this.reset();
+        }
+        reset() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.size = Math.random() * 2 + 0.5;
+            this.alpha = Math.random() * 0.5 + 0.1;
+            this.fade = Math.random() > 0.5 ? 0.002 : -0.002;
+        }
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            this.alpha += this.fade;
+            if (this.alpha <= 0 || this.alpha >= 0.8) this.fade *= -1;
+            if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(100, 200, 255, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 100; i++) particles.push(new Particle());
+
+    const animateParticles = () => {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateParticles);
+    };
+    animateParticles();
+
+    // 2. Magnetic 3D Buttons Logic
+    const initMagneticButtons = () => {
+        const buttons = document.querySelectorAll('.aaaa-btn, .btn-primary, .shop-buy-btn');
+        buttons.forEach(btn => {
+            btn.style.transition = 'transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease';
+            btn.style.position = 'relative';
+            btn.style.overflow = 'hidden';
+            
+            // Add glow layer
+            const glow = document.createElement('div');
+            glow.style.position = 'absolute';
+            glow.style.top = '0';
+            glow.style.left = '0';
+            glow.style.width = '100%';
+            glow.style.height = '100%';
+            glow.style.background = 'radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 70%)';
+            glow.style.opacity = '0';
+            glow.style.transform = 'translate(-50%, -50%) scale(0.5)';
+            glow.style.pointerEvents = 'none';
+            btn.appendChild(glow);
+
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                btn.style.transform = `perspective(1000px) rotateX(${y * 0.05}deg) rotateY(${x * 0.05}deg) translateZ(5px)`;
+                glow.style.opacity = '1';
+                glow.style.left = `${(x / rect.width * 100) + 50}%`;
+                glow.style.top = `${(y / rect.height * 100) + 50}%`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                glow.style.opacity = '0';
+            });
+
+            btn.addEventListener('click', () => {
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    btn.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                }, 100);
+            });
+        });
+    };
+
+    // Run after DOM load or retry if not ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMagneticButtons);
+    } else {
+        initMagneticButtons();
+    }
+    
+    // Re-run when shop/menu opens (dynamic content)
+    const observer = new MutationObserver(() => {
+        initMagneticButtons();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+})();
