@@ -26316,6 +26316,384 @@ const CSS476 = `
 }
 
 /* ── SHOP CARD volumetric product ──────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   v4.80 — AAAA VISUAL SHOP ENHANCEMENTS
+   
+   ✦ Кинематографичные анимации появления
+   ✦ Динамическое освещение с параллаксом
+   ✦ Голографические карточки с 3D-трансформацией
+   ✦ Анимированные градиенты редкости с пульсацией
+   ✦ Эффект "дороговизны" для легендарных предметов
+   ✦ Плавные переходы между вкладками с морфингом
+   ✦ Тактильная визуальная отдача при покупке
+══════════════════════════════════════════════════════════ */
+
+/* ── Shop Container with Cinematic Entry ────────────────── */
+.shop-cinematic-container {
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  background: radial-gradient(ellipse at center, rgba(20,10,40,.92) 0%, rgba(5,2,12,.98) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  overflow-y: auto;
+  animation: shopCinematicEntry .6s cubic-bezier(.22,1,.36,1) both;
+}
+
+@keyframes shopCinematicEntry {
+  0% { opacity: 0; transform: scale(1.1) translateY(-20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── Dynamic Lighting Overlay ───────────────────────────── */
+.shop-lighting-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 86;
+  background: 
+    radial-gradient(circle at var(--mx,50%) var(--my,50%), 
+      rgba(255,215,0,.03) 0%, 
+      transparent 40%),
+    radial-gradient(circle at calc(100% - var(--mx,50%)) calc(100% - var(--my,50%)), 
+      rgba(147,112,219,.02) 0%, 
+      transparent 50%);
+  mix-blend-mode: screen;
+  transition: --mx .1s ease-out, --my .1s ease-out;
+}
+
+/* ── Holographic Card Effect ────────────────────────────── */
+.shop-holo-card {
+  background: linear-gradient(135deg, 
+    rgba(40,25,65,.95) 0%, 
+    rgba(25,15,45,.97) 50%, 
+    rgba(35,20,55,.95) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.1),
+    inset 0 -1px 0 rgba(0,0,0,.3);
+  border-radius: var(--radius-card);
+  transition: all .3s cubic-bezier(.34,1.56,.64,1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: hidden;
+  position: relative;
+}
+
+.shop-holo-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(255,255,255,.05) 50%, 
+    transparent 70%);
+  transform: translateX(-100%);
+  transition: transform .6s ease;
+  pointer-events: none;
+}
+
+.shop-holo-card:hover::before {
+  transform: translateX(100%);
+}
+
+.shop-holo-card:hover {
+  transform: translateY(-8px) scale(1.02) rotateX(2deg);
+  box-shadow: 
+    0 20px 48px rgba(0,0,0,.6),
+    0 0 30px var(--rarity-glow, rgba(255,215,0,.2)),
+    inset 0 1px 0 rgba(255,255,255,.15);
+}
+
+/* ── Rarity Pulse Animation ─────────────────────────────── */
+@keyframes rarityPulse {
+  0%, 100% { 
+    border-color: var(--rarity-base, rgba(255,255,255,.2));
+    box-shadow: 0 0 0 transparent;
+  }
+  50% { 
+    border-color: var(--rarity-bright, rgba(255,255,255,.4));
+    box-shadow: 0 0 20px var(--rarity-glow, transparent);
+  }
+}
+
+.shop-holo-card[data-rarity="legendary"] {
+  --rarity-base: rgba(255,215,0,.4);
+  --rarity-bright: rgba(255,215,0,.8);
+  --rarity-glow: rgba(255,215,0,.3);
+  animation: rarityPulse 3s ease-in-out infinite;
+}
+
+.shop-holo-card[data-rarity="epic"] {
+  --rarity-base: rgba(204,102,255,.4);
+  --rarity-bright: rgba(204,102,255,.8);
+  --rarity-glow: rgba(204,102,255,.25);
+  animation: rarityPulse 4s ease-in-out infinite;
+}
+
+.shop-holo-card[data-rarity="rare"] {
+  --rarity-base: rgba(94,159,255,.4);
+  --rarity-bright: rgba(94,159,255,.8);
+  --rarity-glow: rgba(94,159,255,.2);
+  animation: rarityPulse 5s ease-in-out infinite;
+}
+
+/* ── Legendary Premium Effect ───────────────────────────── */
+.shop-legendary-premium {
+  position: relative;
+  overflow: visible;
+}
+
+.shop-legendary-premium::after {
+  content: '✨';
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  font-size: 1.5rem;
+  animation: legendaryFloat 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255,215,0,.6));
+}
+
+@keyframes legendaryFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: .8; }
+  50% { transform: translateY(-6px) rotate(10deg); opacity: 1; }
+}
+
+/* ── Particle Burst on Purchase ─────────────────────────── */
+.shop-purchase-particle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: particleBurst .8s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+@keyframes particleBurst {
+  0% { 
+    transform: scale(1) translate(0, 0); 
+    opacity: 1; 
+  }
+  100% { 
+    transform: scale(0) translate(var(--tx, 50px), var(--ty, -100px)); 
+    opacity: 0; 
+  }
+}
+
+/* ── Tab Morphing Transition ────────────────────────────── */
+.shop-tabs-morph {
+  display: flex;
+  gap: .25rem;
+  padding: .25rem;
+  background: rgba(0,0,0,.3);
+  border-radius: .75rem;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-tab-morph {
+  flex: 1;
+  padding: .5rem .375rem;
+  font-family: 'Cinzel', serif;
+  font-size: .5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.5);
+  background: transparent;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.34,1.56,.64,1);
+  position: relative;
+  z-index: 2;
+}
+
+.shop-tab-morph.active {
+  color: #FFD700;
+}
+
+.shop-tab-indicator {
+  position: absolute;
+  top: .25rem;
+  left: .25rem;
+  height: calc(100% - .5rem);
+  background: linear-gradient(135deg, rgba(255,215,0,.2), rgba(255,140,0,.15));
+  border-radius: .5rem;
+  transition: all .3s cubic-bezier(.34,1.56,.64,1);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(255,215,0,.2);
+}
+
+/* ── Visual Feedback on Purchase ───────────────────────── */
+.shop-purchase-success {
+  animation: purchaseSuccess .4s cubic-bezier(.34,1.56,.64,1);
+}
+
+@keyframes purchaseSuccess {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(68,255,136,.5); }
+  100% { transform: scale(1); }
+}
+
+.shop-purchase-denied {
+  animation: purchaseDenied .3s ease-in-out;
+}
+
+@keyframes purchaseDenied {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ── Coin Animation ─────────────────────────────────────── */
+.shop-coin-fly {
+  position: fixed;
+  font-size: 1.5rem;
+  pointer-events: none;
+  z-index: 9998;
+  animation: coinFly .6s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+@keyframes coinFly {
+  0% { 
+    transform: translate(0, 0) scale(1) rotate(0deg); 
+    opacity: 1; 
+  }
+  100% { 
+    transform: translate(var(--tox, 0), var(--toy, -50px)) scale(.3) rotate(720deg); 
+    opacity: 0; 
+  }
+}
+
+/* ── Enhanced Glow Effects ──────────────────────────────── */
+.shop-glow-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--glow-color, rgba(255,215,0,.3)) 60deg,
+    transparent 120deg,
+    transparent 360deg
+  );
+  animation: glowRotate 4s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.shop-holo-card:hover .shop-glow-ring {
+  opacity: 1;
+}
+
+@keyframes glowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Price Tag Animation ────────────────────────────────── */
+.shop-price-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  padding: .25rem .5rem;
+  background: linear-gradient(135deg, rgba(255,215,0,.15), rgba(255,140,0,.1));
+  border: 1px solid rgba(255,215,0,.3);
+  border-radius: 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: .5rem;
+  font-weight: 700;
+  color: #FFD700;
+  transition: all .2s ease;
+}
+
+.shop-price-tag:hover {
+  background: linear-gradient(135deg, rgba(255,215,0,.25), rgba(255,140,0,.2));
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255,215,0,.3);
+}
+
+.shop-price-tag.discount {
+  animation: discountPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes discountPulse {
+  0%, 100% { 
+    border-color: rgba(255,215,0,.3);
+    box-shadow: 0 0 10px rgba(255,215,0,.2);
+  }
+  50% { 
+    border-color: rgba(255,215,0,.6);
+    box-shadow: 0 0 20px rgba(255,215,0,.4);
+  }
+}
+
+/* ── Sold Badge ─────────────────────────────────────────── */
+.shop-sold-badge {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  padding: .25rem .5rem;
+  background: rgba(68,255,136,.15);
+  border: 1px solid rgba(68,255,136,.4);
+  border-radius: .375rem;
+  font-family: 'Cinzel', serif;
+  font-size: .4rem;
+  font-weight: 700;
+  color: #44FF88;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  animation: soldPop .3s cubic-bezier(.34,1.56,.64,1) both;
+}
+
+@keyframes soldPop {
+  0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* ── Category Header with Gradient ─────────────────────── */
+.shop-category-header {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: .625rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: .75rem;
+  padding: .5rem;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255,215,0,.05), 
+    transparent);
+  border-left: 2px solid rgba(255,215,0,.3);
+  border-right: 2px solid rgba(255,215,0,.3);
+  color: rgba(255,215,0,.8);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+/* ── Scroll Indicator ───────────────────────────────────── */
+.shop-scroll-indicator {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .375rem .75rem;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 1rem;
+  font-size: .75rem;
+  color: rgba(255,255,255,.6);
+  animation: scrollBounce 2s ease-in-out infinite;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
 .shop-item-card {
   background: linear-gradient(145deg,
     rgba(30,22,55,.95) 0%,
