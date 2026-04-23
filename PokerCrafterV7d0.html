@@ -1,24 +1,4 @@
-branches: [
-      { id:'power', name:{ru:'Мощь',ua:'Міць',en:'Power',zhs:'力量',zht:'力量',ar:'القوة',es:'Poder',fr:'Puissance',de:'Macht',pt:'Poder',ja:'力',ko:'힘',tr:'Güç',pl:'Moc',it:'Potere',nl:'Macht',th:'พลัง'}, color:'#E74C3C', icon:'⚡',
-        nodes:[
-          {id:'p1',n:{ru:'Сила начала',ua:'Сила початку',en:'Starting Force',zhs:'初始之力',zht:'初始之力',ar:'قوة البداية',es:'Fuerza Inicial',fr:'Force Initiale',de:'Startkraft',pt:'Força Inicial',ja:'スタート力',ko:'초기 힘',tr:'Başlangıç Gücü',pl:'Siła Startu',it:'Forza Iniziale',nl:'Startkracht',th:'พลังเริ่มต้น'}, bonus:{ru:'+0.5 mult стартовый',en:'+0.5 starting mult',zhs:'+0.5 初始倍率',ar:'+0.5 مضاعف البداية',es:'+0.5 mult inicial',fr:'+0.5 mult initial',de:'+0.5 Start-Mult',pt:'+0.5 mult inicial',ja:'+0.5 開始マルト',ko:'+0.5 시작 배율',tr:'+0.5 başlangıç çarpanı',pl:'+0.5 mnożnik startowy',it:'+0.5 molt iniziale',nl:'+0.5 start mult',th:'+0.5 คูณเริ่มต้น'},xp:100},
-          {id:'p2',n:{ru:'Двойник Джокера',ua:'Двійник Джокера',en:'Joker Twin',zhs:'百搭双生',zht:'百搭雙生',ar:'توأم الجوكر',es:'Doble Comodín',fr:'Double Joker',de:'Joker-Zwilling',pt:'Gêmeo Curinga',ja:'ジョーカー双子',ko:'조커 쌍둥이',tr:'Joker İkizi',pl:'Bliźniak Jokera',it:'Jolly Gemello',nl:'Joker Tweeling',th:'แฝดจ๊อกเกอร์'}, bonus:{ru:'Слот джокера ×2 при старте',en:'Joker slot ×2 at start',zhs:'开局百搭槽×2',ar:'فتحة الجوكر ×2 عند البدء',es:'Ranura joker ×2 al inicio',fr:'Emplacement joker ×2',de:'Joker-Slot ×2',pt:'Slot curinga ×2',ja:'ジョーカースロット×2',ko:'조커 슬롯×2',tr:'Joker yuvası ×2',pl:'Slot jokera ×2',it:'Slot jolly ×2',nl:'Joker-slot ×2',th:'ช่องจ๊อกเกอร์×2'},xp:250},
-          {id:'p3',n:{ru:'Гнев Туза',ua:'Гнів Туза',en:'Ace Wrath',zhs:'王牌之怒',zht:'王牌之怒',ar:'غضب الآس',es:'Ira del As',fr:"Colère de l'As",de:'Ass-Zorn',pt:'Fúria do Ás',ja:'エース怒り',ko:'에이스 분노',tr:"As'ın Öfkesi",pl:'Gniew Asa',it:"Ira dell'Asso",nl:'Aas Woede',th:'ความโกรธของเอซ'}, bonus:{ru:'Тузы дают ×3 чипов',en:'Aces give ×3 chips',zhs:'A牌×3筹码',ar:'الآسات تعطي ×3 رقائق',es:'Ases dan ×3 fichas',fr:'As donnent ×3 jetons',de:'Asse geben ×3 Chips',pt:'Ases dão ×3 fichas',ja:'エースが×3チップ',ko:'에이스가 ×3 칩',tr:'Aslar ×3 chip',pl:'Asy dają ×3 żetony',it:'Assi ×3 chip',nl:'Azen ×3 chips',th:'เอซให้×3ชิป'},xp:500},
-          {id:'p4',n:{ru:'Абсолют',ua:'Абсолют',en:'Absolute',zhs:'绝对',zht:'絕對',ar:'المطلق',es:'Absoluto',fr:'Absolu',de:'Absolut',pt:'Absoluto',ja:'絶対',ko:'절대',tr:'Mutlak',pl:'Absolut',it:'Assoluto',nl:'Absoluut',th:'สัมบูรณ์'}, bonus:{ru:'Royal Flush →×10',en:'Royal Flush →×10',zhs:'皇家同花顺→×10',ar:'رويال فلاش→×10',es:'Royal Flush→×10',fr:'Quinte Royale→×10',de:'Royal Flush→×10',pt:'Royal Flush→×10',ja:'ロイヤルフラッシュ→×10',ko:'로열플러시→×10',tr:'Royal Flush→×10',pl:'Royal Flush→×10',it:'Royal Flush→×10',nl:'Royal Flush→×10',th:' รอยัลฟลัช→×10'},xp:1000},
-        ]},
-      { id:'wealth', name:{ru:'Богатство',ua:'Багатство',en:'Wealth',zhs:'财富',zht:'財富',ar:'الثروة',es:'Riqueza',fr:'Richesse',de:'Reichtum',pt:'Riqueza',ja:'富',ko:'부',tr:'Zenginlik',pl:'Bogactwo',it:'Ricchezza',nl:'Rijkdom',th:'ความร่ำรวย'}, color:'#F39C12', icon:'💰',
-        nodes:[
-          {id:'w1',n:{ru:'Монетный двор',ua:'Монетний двір',en:'Mint',zhs:'造币厂',zht:'造幣廠',ar:'دار السك',es:'Casa Moneda',fr:'Monnaie',de:'Münze',pt:'Casa Moeda',ja:'造幣局',ko:'조폐국',tr:'Darphane',pl:'Mennica',it:'Zecca',nl:'Munt',th:'โรงกษาปณ์'}, bonus:{ru:'+3 золота/раунд',en:'+3 gold/round',zhs:'+3金币/回合',ar:'+3 ذهب/جولة',es:'+3 oro/ronda',fr:'+3 or/tour',de:'+3 Gold/Runde',pt:'+3 ouro/rodada',ja:'+3ゴールド/ラウンド',ko:'+3골드/라운드',tr:'+3 altın/tur',pl:'+3 złoto/runda',it:'+3 oro/round',nl:'+3 goud/ronde',th:'+3ทอง/รอบ'},xp:120},
-          {id:'w2',n:{ru:'Торговец',ua:'Торговець',en:'Merchant',zhs:'商人',zht:'商人',ar:'التاجر',es:'Mercader',fr:'Marchand',de:'Händler',pt:'Mercador',ja:'商人',ko:'상인',tr:'Tüccar',pl:'Kupiec',it:'Mercante',nl:'Koopman',th:'พ่อค้า'}, bonus:{ru:'Магазин: -2 к ценам',en:'Shop: -2 to prices',zhs:'商店-2价格',ar:'المتجر: -2 للأسعار',es:'Tienda: -2 precios',fr:'Boutique: -2 prix',de:'Shop: -2 Preise',pt:'Loja: -2 preços',ja:'ショップ-2値段',ko:'상점 -2가격',tr:'Mağaza: -2 fiyat',pl:'Sklep: -2 ceny',it:'Negozio: -2 prezzi',nl:'Winkel: -2 prijzen',th:'ร้าน:-2ราคา'},xp:280},
-          {id:'w3',n:{ru:'Казначей',ua:'Скарбник',en:'Treasurer',zhs:'财务长',zht:'財務長',ar:'أمين الخزينة',es:'Tesorero',fr:'Trésorier',de:'Schatzmeister',pt:'Tesoureiro',ja:'財務長',ko:'재무관',tr:'Haznedar',pl:'Skarbnik',it:'Tesoriere',nl:'Penningmeester',th:'เหรัญญิก'}, bonus:{ru:'Золото не тратится на ререлл',en:'Gold free on reroll',zhs:'重掷免费',ar:'الذهب مجاني على إعادة الدحرجة',es:'Oro gratis en reroll',fr:'Reroll gratuit',de:'Reroll gratis',pt:'Reroll grátis',ja:'リロール無料',ko:'리롤 무료',tr:'Reroll bedava',pl:'Reroll za darmo',it:'Reroll gratuito',nl:'Reroll gratis',th:'รีโรลฟรี'},xp:600},
-          {id:'w4',n:{ru:'Мидас',ua:'Мідас',en:'Midas',zhs:'迈达斯',zht:'邁達斯',ar:'ميداس',es:'Midas',fr:'Midas',de:'Midas',pt:'Midas',ja:'ミダス',ko:'미다스',tr:'Midas',pl:'Midas',it:'Mida',nl:'Midas',th:'ไมดาส'}, bonus:{ru:'Каждая покупка даёт +50 XP',en:'Every purchase +50 XP',zhs:'每次购买+50经验',ar:'كل شراء +50 خبرة',es:'Cada compra +50 XP',fr:'Achat: +50 XP',de:'Kauf: +50 XP',pt:'Compra: +50 XP',ja:'購入+50XP',ko:'구매+50XP',tr:'Satın alma+50XP',pl:'Zakup+50XP',it:'Acquisto+50XP',nl:'Aankoop+50XP',th:'ซื้อ+50XP'},xp:1200},
-        ]},
-      { id:'chaos', name:{ru:'Хаос',ua:'Хаос',en:'Chaos',zhs:'混乱',zht:'混亂',ar:'الفوضى',es:'Caos',fr:'Chaos',de:'Chaos',pt:'Caos',ja:'カオス',ko:'혼돈',tr:'Kaos',pl:'Chaos',it:'Caos',nl:'Chaos',th:'ความวุ่นวาย'}, color:'#9B59B6', icon:'🌀',
-        nodes:[
-          {id:'c1',n:{ru:'Игрок',ua:'Гравець',en:'Gambler',zhs:'赌徒',zht:'賭徒',ar:'المقامر',es:'Jugador',fr:'Joueur',de:'Spieler',pt:'Jogador',ja:'ギャンブラー',ko:'도박꾼',tr:'Kumarbaz',pl:'Gracz',it:'Giocatore',nl:'Speler',th:'นักพนัน'}, bonus:{ru:'Случайная карта→стеклянная',en:'Random card→glass',zhs:'随机牌→玻璃',ar:'بطاقة عشوائية→زجاج',es:'Carta aleatoria→cristal',fr:'Carte→verre',de:'Karte→Glas',pt:'Carta→vidro',ja:'ランダムカード→ガラス',ko:'랜덤카드→유리',tr:'Rastgele kart→cam',pl:'Losowa karta→szkło',it:'Carta→vetro',nl:'Kaart→glas',th:'การ์ดสุ่ม→แก้ว'},xp:80},
-          {id:'c2',n:{ru:'Шут',ua:'Блазень',en:'Jester',zhs:'小丑',zht:'小丑',ar:'المهرج',es:'Bufón',fr:'Bouffon',de:'Narr',pt:'Bobo',ja:'道化師',ko:'광대',tr:'Soytarı',pl:'Błazen',it:'Giullare',nl:'Nar',th:'ตัวตลก'}, bonus:{ru:'Случайный джокер бесплатно',en:'Random free joker',zhs:'随机免费百搭',ar:'جوكر عشوائي مجاني',es:'Comodín aleatorio gratis',fr:'Joker aléatoire gratuit',de:'Zufälliger Joker gratis',pt:'Curinga aleatório grátis',ja:'ランダム無料ジョーカー',ko:'랜덤 무료 조커',tr:'Rastgele ücretsiz joker',pl:'Losowy joker gratis',it:'Jolly casuale gratis',nl:'Willekeurige joker gratis',th:'จ๊อกเกอร์สุ่มฟรี'},xp:200},
-        ]},
-    ],<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -42,6 +22,168 @@ branches: [
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 
   <style>
+/* ============================================
+   AAAA CLASS VISUAL UPGRADE (2026 STANDARD)
+   ============================================ */
+
+/* Premium Background System */
+.aaaa-premium-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: linear-gradient(135deg, #030108 0%, #0a0416 50%, #0d061f 100%);
+  overflow: hidden;
+}
+
+.aaaa-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(112, 0, 255, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(0, 255, 136, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 0, 85, 0.04) 0%, transparent 60%);
+  animation: bgPulse 20s ease-in-out infinite;
+}
+
+.aaaa-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  animation: floatOrb 15s ease-in-out infinite;
+}
+
+.aaaa-glow-orb--1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(112, 0, 255, 0.3) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.aaaa-glow-orb--2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.2) 0%, transparent 70%);
+  bottom: -50px;
+  left: -50px;
+  animation-delay: -5s;
+}
+
+.aaaa-glow-orb--3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -10s;
+}
+
+@keyframes bgPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -30px) scale(1.05); }
+  50% { transform: translate(-15px, 20px) scale(0.95); }
+  75% { transform: translate(25px, 15px) scale(1.02); }
+}
+
+/* Premium Card Surface */
+.aaaa-card-surface {
+  background: rgba(22, 18, 42, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Cinematic Text Glow */
+.aaaa-text-glow {
+  text-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.5),
+    0 0 40px rgba(255, 215, 0, 0.3),
+    0 0 60px rgba(255, 215, 0, 0.2);
+}
+
+/* Holographic Border */
+.aaaa-holo-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.aaaa-holo-border::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 215, 0, 0.1) 40%,
+    rgba(0, 255, 136, 0.1) 50%,
+    rgba(112, 0, 255, 0.1) 60%,
+    transparent 70%
+  );
+  animation: holoRotate 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes holoRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading Screen Upgrade */
+#loading {
+  background: linear-gradient(135deg, #030108 0%, #0a0416 100%);
+}
+
+#loading .logo {
+  font-size: 4rem;
+  filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.6));
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+#loading .title {
+  font-size: 1.8rem;
+  letter-spacing: 0.3em;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+}
+
+#loading .bar-bg {
+  background: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+#loading .bar-fill {
+  background: linear-gradient(90deg, #FFD700, #FF8C00, #FFD700);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
 /* CSS @property — typed animated custom properties (2026) */
 @property --v { syntax: "<number>"; inherits: true; initial-value: 0.4; }
 @property --chip-glow { syntax: "<color>"; inherits: false; initial-value: transparent; }
@@ -111,8 +253,16 @@ branches: [
 <div id="loading">
   <div class="logo">🃏</div>
   <div class="title">POKER CRAFTER</div>
-  <div class="sub">v4.5 · THE LIVING GAME</div>
+  <div class="sub">v7.0 · AAAA EDITION 2026</div>
   <div class="bar-bg"><div class="bar-fill"></div></div>
+</div>
+
+<!-- Premium Background System -->
+<div class="aaaa-premium-bg">
+  <div class="aaaa-particles"></div>
+  <div class="aaaa-glow-orb aaaa-glow-orb--1"></div>
+  <div class="aaaa-glow-orb aaaa-glow-orb--2"></div>
+  <div class="aaaa-glow-orb aaaa-glow-orb--3"></div>
 </div>
 
 <div id="root"></div>
@@ -26336,6 +26486,384 @@ const CSS476 = `
 }
 
 /* ── SHOP CARD volumetric product ──────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   v4.80 — AAAA VISUAL SHOP ENHANCEMENTS
+   
+   ✦ Кинематографичные анимации появления
+   ✦ Динамическое освещение с параллаксом
+   ✦ Голографические карточки с 3D-трансформацией
+   ✦ Анимированные градиенты редкости с пульсацией
+   ✦ Эффект "дороговизны" для легендарных предметов
+   ✦ Плавные переходы между вкладками с морфингом
+   ✦ Тактильная визуальная отдача при покупке
+══════════════════════════════════════════════════════════ */
+
+/* ── Shop Container with Cinematic Entry ────────────────── */
+.shop-cinematic-container {
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  background: radial-gradient(ellipse at center, rgba(20,10,40,.92) 0%, rgba(5,2,12,.98) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  overflow-y: auto;
+  animation: shopCinematicEntry .6s cubic-bezier(.22,1,.36,1) both;
+}
+
+@keyframes shopCinematicEntry {
+  0% { opacity: 0; transform: scale(1.1) translateY(-20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── Dynamic Lighting Overlay ───────────────────────────── */
+.shop-lighting-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 86;
+  background: 
+    radial-gradient(circle at var(--mx,50%) var(--my,50%), 
+      rgba(255,215,0,.03) 0%, 
+      transparent 40%),
+    radial-gradient(circle at calc(100% - var(--mx,50%)) calc(100% - var(--my,50%)), 
+      rgba(147,112,219,.02) 0%, 
+      transparent 50%);
+  mix-blend-mode: screen;
+  transition: --mx .1s ease-out, --my .1s ease-out;
+}
+
+/* ── Holographic Card Effect ────────────────────────────── */
+.shop-holo-card {
+  background: linear-gradient(135deg, 
+    rgba(40,25,65,.95) 0%, 
+    rgba(25,15,45,.97) 50%, 
+    rgba(35,20,55,.95) 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.1),
+    inset 0 -1px 0 rgba(0,0,0,.3);
+  border-radius: var(--radius-card);
+  transition: all .3s cubic-bezier(.34,1.56,.64,1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: hidden;
+  position: relative;
+}
+
+.shop-holo-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(255,255,255,.05) 50%, 
+    transparent 70%);
+  transform: translateX(-100%);
+  transition: transform .6s ease;
+  pointer-events: none;
+}
+
+.shop-holo-card:hover::before {
+  transform: translateX(100%);
+}
+
+.shop-holo-card:hover {
+  transform: translateY(-8px) scale(1.02) rotateX(2deg);
+  box-shadow: 
+    0 20px 48px rgba(0,0,0,.6),
+    0 0 30px var(--rarity-glow, rgba(255,215,0,.2)),
+    inset 0 1px 0 rgba(255,255,255,.15);
+}
+
+/* ── Rarity Pulse Animation ─────────────────────────────── */
+@keyframes rarityPulse {
+  0%, 100% { 
+    border-color: var(--rarity-base, rgba(255,255,255,.2));
+    box-shadow: 0 0 0 transparent;
+  }
+  50% { 
+    border-color: var(--rarity-bright, rgba(255,255,255,.4));
+    box-shadow: 0 0 20px var(--rarity-glow, transparent);
+  }
+}
+
+.shop-holo-card[data-rarity="legendary"] {
+  --rarity-base: rgba(255,215,0,.4);
+  --rarity-bright: rgba(255,215,0,.8);
+  --rarity-glow: rgba(255,215,0,.3);
+  animation: rarityPulse 3s ease-in-out infinite;
+}
+
+.shop-holo-card[data-rarity="epic"] {
+  --rarity-base: rgba(204,102,255,.4);
+  --rarity-bright: rgba(204,102,255,.8);
+  --rarity-glow: rgba(204,102,255,.25);
+  animation: rarityPulse 4s ease-in-out infinite;
+}
+
+.shop-holo-card[data-rarity="rare"] {
+  --rarity-base: rgba(94,159,255,.4);
+  --rarity-bright: rgba(94,159,255,.8);
+  --rarity-glow: rgba(94,159,255,.2);
+  animation: rarityPulse 5s ease-in-out infinite;
+}
+
+/* ── Legendary Premium Effect ───────────────────────────── */
+.shop-legendary-premium {
+  position: relative;
+  overflow: visible;
+}
+
+.shop-legendary-premium::after {
+  content: '✨';
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  font-size: 1.5rem;
+  animation: legendaryFloat 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255,215,0,.6));
+}
+
+@keyframes legendaryFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: .8; }
+  50% { transform: translateY(-6px) rotate(10deg); opacity: 1; }
+}
+
+/* ── Particle Burst on Purchase ─────────────────────────── */
+.shop-purchase-particle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: particleBurst .8s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+@keyframes particleBurst {
+  0% { 
+    transform: scale(1) translate(0, 0); 
+    opacity: 1; 
+  }
+  100% { 
+    transform: scale(0) translate(var(--tx, 50px), var(--ty, -100px)); 
+    opacity: 0; 
+  }
+}
+
+/* ── Tab Morphing Transition ────────────────────────────── */
+.shop-tabs-morph {
+  display: flex;
+  gap: .25rem;
+  padding: .25rem;
+  background: rgba(0,0,0,.3);
+  border-radius: .75rem;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-tab-morph {
+  flex: 1;
+  padding: .5rem .375rem;
+  font-family: 'Cinzel', serif;
+  font-size: .5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.5);
+  background: transparent;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.34,1.56,.64,1);
+  position: relative;
+  z-index: 2;
+}
+
+.shop-tab-morph.active {
+  color: #FFD700;
+}
+
+.shop-tab-indicator {
+  position: absolute;
+  top: .25rem;
+  left: .25rem;
+  height: calc(100% - .5rem);
+  background: linear-gradient(135deg, rgba(255,215,0,.2), rgba(255,140,0,.15));
+  border-radius: .5rem;
+  transition: all .3s cubic-bezier(.34,1.56,.64,1);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(255,215,0,.2);
+}
+
+/* ── Visual Feedback on Purchase ───────────────────────── */
+.shop-purchase-success {
+  animation: purchaseSuccess .4s cubic-bezier(.34,1.56,.64,1);
+}
+
+@keyframes purchaseSuccess {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(68,255,136,.5); }
+  100% { transform: scale(1); }
+}
+
+.shop-purchase-denied {
+  animation: purchaseDenied .3s ease-in-out;
+}
+
+@keyframes purchaseDenied {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ── Coin Animation ─────────────────────────────────────── */
+.shop-coin-fly {
+  position: fixed;
+  font-size: 1.5rem;
+  pointer-events: none;
+  z-index: 9998;
+  animation: coinFly .6s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+@keyframes coinFly {
+  0% { 
+    transform: translate(0, 0) scale(1) rotate(0deg); 
+    opacity: 1; 
+  }
+  100% { 
+    transform: translate(var(--tox, 0), var(--toy, -50px)) scale(.3) rotate(720deg); 
+    opacity: 0; 
+  }
+}
+
+/* ── Enhanced Glow Effects ──────────────────────────────── */
+.shop-glow-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--glow-color, rgba(255,215,0,.3)) 60deg,
+    transparent 120deg,
+    transparent 360deg
+  );
+  animation: glowRotate 4s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.shop-holo-card:hover .shop-glow-ring {
+  opacity: 1;
+}
+
+@keyframes glowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Price Tag Animation ────────────────────────────────── */
+.shop-price-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  padding: .25rem .5rem;
+  background: linear-gradient(135deg, rgba(255,215,0,.15), rgba(255,140,0,.1));
+  border: 1px solid rgba(255,215,0,.3);
+  border-radius: 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: .5rem;
+  font-weight: 700;
+  color: #FFD700;
+  transition: all .2s ease;
+}
+
+.shop-price-tag:hover {
+  background: linear-gradient(135deg, rgba(255,215,0,.25), rgba(255,140,0,.2));
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255,215,0,.3);
+}
+
+.shop-price-tag.discount {
+  animation: discountPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes discountPulse {
+  0%, 100% { 
+    border-color: rgba(255,215,0,.3);
+    box-shadow: 0 0 10px rgba(255,215,0,.2);
+  }
+  50% { 
+    border-color: rgba(255,215,0,.6);
+    box-shadow: 0 0 20px rgba(255,215,0,.4);
+  }
+}
+
+/* ── Sold Badge ─────────────────────────────────────────── */
+.shop-sold-badge {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  padding: .25rem .5rem;
+  background: rgba(68,255,136,.15);
+  border: 1px solid rgba(68,255,136,.4);
+  border-radius: .375rem;
+  font-family: 'Cinzel', serif;
+  font-size: .4rem;
+  font-weight: 700;
+  color: #44FF88;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  animation: soldPop .3s cubic-bezier(.34,1.56,.64,1) both;
+}
+
+@keyframes soldPop {
+  0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* ── Category Header with Gradient ─────────────────────── */
+.shop-category-header {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: .625rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: .75rem;
+  padding: .5rem;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255,215,0,.05), 
+    transparent);
+  border-left: 2px solid rgba(255,215,0,.3);
+  border-right: 2px solid rgba(255,215,0,.3);
+  color: rgba(255,215,0,.8);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+/* ── Scroll Indicator ───────────────────────────────────── */
+.shop-scroll-indicator {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .375rem .75rem;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 1rem;
+  font-size: .75rem;
+  color: rgba(255,255,255,.6);
+  animation: scrollBounce 2s ease-in-out infinite;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
 .shop-item-card {
   background: linear-gradient(145deg,
     rgba(30,22,55,.95) 0%,
@@ -29025,6 +29553,7 @@ const LOADING_TIPS = {
 
 function LoadingScreen({ onDone }) {
   const [progress, setProgress] = React.useState(0);
+  const [phase, setPhase] = React.useState(0);
   // v6.18 QA: pick tip in current locale
   const [tip] = React.useState(() => {
     var loc = (typeof L10N !== 'undefined' && L10N._loc) || 'en';
@@ -29037,65 +29566,118 @@ function LoadingScreen({ onDone }) {
     const t = setInterval(() => {
       p += Math.random() * 18 + 5;
       setProgress(Math.min(100, Math.round(p)));
+      if (p >= 30 && phase === 0) setPhase(1);
+      if (p >= 70 && phase === 1) setPhase(2);
       if (p >= 100) { clearInterval(t); setTimeout(onDone, 400); }
     }, 120);
     return () => clearInterval(t);
   }, []);
 
+  const loc = (typeof L10N !== 'undefined' && L10N._loc) || 'en';
+  const loadingText = {ru:'Загрузка',ua:'Завантаження',en:'Loading',zhs:'加载中',zht:'載入中',ar:'جار التحميل',es:'Cargando',fr:'Chargement',de:'Laden',pt:'Carregando',ja:'読み込み中',ko:'로딩 중',tr:'Yükleniyor',pl:'Ładowanie',it:'Caricamento',nl:'Laden',th:'กำลังโหลด'}[loc] || 'Loading';
+  const versionText = {ru:'AAAA EDITION 2026',ua:'AAAA EDITION 2026',en:'AAAA EDITION 2026',zhs:'AAAA 版 2026',zht:'AAAA 版 2026',ar:'إصدار AAAA 2026',es:'EDICIÓN AAAA 2026',fr:'ÉDITION AAAA 2026',de:'AAAA AUSGABE 2026',pt:'EDIÇÃO AAAA 2026',ja:'AAAA エディション 2026',ko:'AAAA 에디션 2026',tr:'AAAA SÜRÜM 2026',pl:'WYDANIE AAAA 2026',it:'EDIZIONE AAAA 2026',nl:'AAAA EDITIE 2026',th:'รุ่น AAAA 2026'}[loc] || 'AAAA EDITION 2026';
+
   return (
-    <div style={{
-      position:'fixed',inset:0,zIndex:9999,
-      background:'linear-gradient(160deg,#08060F 0%,#16122A 50%,#08060F 100%)',
-      display:'flex',flexDirection:'column',alignItems:'center',
-      justifyContent:'center',gap:'1.5rem',
-    }}>
-      {/* Logo */}
-      <div style={{textAlign:'center'}}>
-        <div style={{
-          fontSize:'3rem',marginBottom:'.5rem',
-          animation:'logoSpin 3s ease-in-out infinite',
-          display:'inline-block',
-        }}>🃏</div>
-        <div style={{
-          fontFamily:'Cinzel,serif',fontSize:'1.5rem',fontWeight:900,
-          background:'linear-gradient(135deg,#FFD700,#FFA500,#FFD700)',
-          WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',
-          backgroundClip:'text',backgroundSize:'200%',
-          animation:'goldFlow 3s ease-in-out infinite',
-          letterSpacing:'.2em',
-        }}>POKER CRAFTER</div>
-        <div style={{fontSize:'.6rem',color:'rgba(147,112,219,.6)',
-          letterSpacing:'.3em',marginTop:'.25rem'}}>ULTIMATE EDITION</div>
-      </div>
-
-      {/* Progress bar (с оценкой времени — из руководства §2.6) */}
-      <div style={{width:'min(16rem,80vw)'}}>
-        <div style={{height:'.375rem',background:'rgba(255,255,255,.08)',
-          borderRadius:'1rem',overflow:'hidden',marginBottom:'.5rem'}}>
-          <div style={{height:'100%',width:`${progress}%`,
-            background:'linear-gradient(90deg,rgba(147,112,219,.7),rgba(200,160,255,.9))',
-            borderRadius:'1rem',transition:'width .15s ease',
-            boxShadow:'0 0 8px rgba(147,112,219,.4)'}}/>
-        </div>
-        <div style={{display:'flex',justifyContent:'space-between',
-          fontSize:'.55rem',color:'rgba(255,255,255,.25)'}}>
-          <span>Загрузка...</span>
-          <span>{progress}%</span>
-        </div>
-      </div>
-
-      {/* Tip */}
+    <div className="aaaa-premium-bg">
+      <div className="aaaa-particles" />
+      <div className="aaaa-orb aaaa-orb-1" />
+      <div className="aaaa-orb aaaa-orb-2" />
+      <div className="aaaa-orb aaaa-orb-3" />
+      
       <div style={{
-        maxWidth:'min(20rem,85vw)',padding:'.75rem 1rem',textAlign:'center',
-        background:'rgba(147,112,219,.06)',
-        border:'1px solid rgba(147,112,219,.15)',borderRadius:'.75rem',
+        position:'relative',zIndex:10,width:'100%',height:'100%',
+        display:'flex',flexDirection:'column',alignItems:'center',
+        justifyContent:'center',gap:'2rem',padding:'1rem',
       }}>
-        <div style={{fontSize:'.55rem',color:'rgba(147,112,219,.5)',
-          marginBottom:'.375rem',fontFamily:'Cinzel,serif',letterSpacing:'.1em'}}>
-          💡 СОВЕТ
+        {/* AAAA Logo with 3D effect */}
+        <div style={{textAlign:'center',transformStyle:'preserve-3d',perspective:'1000px'}}>
+          <div style={{
+            fontSize:'clamp(4rem,12vw,6rem)',marginBottom:'1rem',
+            animation:'logoPulse 2s ease-in-out infinite, logoFloat 3s ease-in-out infinite',
+            display:'inline-block',filter:'drop-shadow(0 0 30px rgba(255,215,0,0.5))',
+            transform:'rotateY(0deg)',backfaceVisibility:'visible',
+          }}>🃏</div>
+          <div style={{
+            fontFamily:'Cinzel Decorative,Cinzel,serif',fontSize:'clamp(1.5rem,4vw,2.5rem)',fontWeight:900,
+            background:'linear-gradient(135deg,#FFD700 0%,#FFA500 30%,#FFD700 50%,#FFA500 70%,#FFD700 100%)',
+            WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',
+            backgroundSize:'200% auto',animation:'goldFlow 3s ease-in-out infinite',
+            letterSpacing:'.3em',textShadow:'0 0 40px rgba(255,215,0,0.4)',
+            filter:'drop-shadow(0 0 20px rgba(255,215,0,0.3))',
+          }}>POKER CRAFTER</div>
+          <div style={{
+            fontFamily:'Cinzel,serif',fontSize:'clamp(.7rem,2vw,1rem)',
+            background:'linear-gradient(90deg,rgba(147,112,219,.8),rgba(200,160,255,1),rgba(147,112,219,.8))',
+            WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',
+            letterSpacing:'.5em',marginTop:'.5rem',opacity:.9,
+            animation:'shineText 4s linear infinite',
+          }}>{versionText}</div>
         </div>
-        <div style={{fontSize:'.65rem',color:'rgba(255,255,255,.55)',lineHeight:1.6}}>
-          {tip}
+
+        {/* Premium Progress bar */}
+        <div style={{width:'min(20rem,85vw)'}}>
+          <div style={{position:'relative',height:'.5rem',background:'rgba(255,255,255,.05)',
+            borderRadius:'2rem',overflow:'hidden',boxShadow:'inset 0 2px 10px rgba(0,0,0,.5)',
+            border:'1px solid rgba(255,215,0,.1)'}}>
+            <div style={{position:'absolute',inset:0,
+              background:'linear-gradient(90deg,transparent,rgba(255,215,0,.3),transparent)',
+              animation:'shimmer 2s linear infinite'}}/>
+            <div style={{height:'100%',width:`${progress}%`,
+              background:'linear-gradient(90deg,#9400D3 0%,#DA70D6 30%,#FFD700 60%,#DA70D6 80%,#9400D3 100%)',
+              borderRadius:'2rem',transition:'width .2s ease-out',
+              boxShadow:'0 0 20px rgba(218,112,214,.6),0 0 40px rgba(255,215,0,.4)',
+              position:'relative',overflow:'hidden'}}>
+              <div style={{position:'absolute',right:0,top:0,bottom:0,width:'100px',
+                background:'linear-gradient(90deg,transparent,rgba(255,255,255,.4))',
+                transform:'skewX(-20deg)'}}/>
+            </div>
+          </div>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',
+            marginTop:'.75rem',fontFamily:'Cinzel,serif'}}>
+            <span style={{fontSize:'clamp(.6rem,2vw,.75rem)',color:'rgba(200,160,255,.8)',
+              letterSpacing:'.1em',textShadow:'0 0 10px rgba(147,112,219,.5)'}}>
+              {loadingText}...
+            </span>
+            <span style={{fontSize:'clamp(.7rem,2vw,.9rem)',fontWeight:700,
+              background:'linear-gradient(135deg,#FFD700,#FFA500)',
+              WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',
+              fontFamily:'JetBrains Mono,monospace',textShadow:'0 0 20px rgba(255,215,0,.3)'}}>
+              {progress}%
+            </span>
+          </div>
+        </div>
+
+        {/* Tip card with holo effect */}
+        <div style={{
+          maxWidth:'min(24rem,90vw)',padding:'1.25rem',textAlign:'center',
+          background:'linear-gradient(145deg,rgba(147,112,219,.08),rgba(75,0,130,.06))',
+          border:'1px solid rgba(147,112,219,.2)',borderRadius:'1.25rem',
+          backdropFilter:'blur(20px)',boxShadow:'0 10px 40px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.1)',
+          position:'relative',overflow:'hidden',
+        }}>
+          <div style={{position:'absolute',inset:-2,
+            background:'linear-gradient(45deg,transparent 30%,rgba(255,215,0,.1) 50%,transparent 70%)',
+            backgroundSize:'200% 200%',animation:'holoRotate 3s linear infinite',pointerEvents:'none'}}/>
+          <div style={{position:'relative',zIndex:1}}>
+            <div style={{fontSize:'clamp(.6rem,2vw,.7rem)',color:'rgba(147,112,219,.7)',
+              marginBottom:'.5rem',fontFamily:'Cinzel,serif',letterSpacing:'.2em',
+              textTransform:'uppercase',textShadow:'0 0 10px rgba(147,112,219,.3)'}}>
+              💡 {loc==='ru'?'СОВЕТ':loc==='ua'?'ПОРАДА':'TIP'}
+            </div>
+            <div style={{fontSize:'clamp(.7rem,2vw,.85rem)',color:'rgba(255,255,255,.7)',lineHeight:1.7,
+              fontFamily:'Inter,sans-serif',textShadow:'0 0 20px rgba(255,255,255,.1)'}}>
+              {tip}
+            </div>
+          </div>
+        </div>
+
+        {/* Phase indicators */}
+        <div style={{display:'flex',gap:'.5rem',marginTop:'1rem'}}>
+          {[0,1,2].map(i=>(
+            <div key={i} style={{width:phase>i?'12px':'8px',height:phase>i?'12px':'8px',
+              borderRadius:'50%',background:phase>i?'#FFD700':'rgba(255,215,0,.2)',
+              transition:'all .3s ease',boxShadow:phase>i?'0 0 10px #FFD700':'none'}}/>
+          ))}
         </div>
       </div>
     </div>
@@ -92338,12 +92920,375 @@ window.__v7dL10nKeys = {
 
 window.PC_V7D_VERSION = '7.13';
 console.log('[v7.13] Combo Ref + Run History UI + Deck Inspector + Keyboard + Stat Dashboard');
+</script>
 
+<!-- AAAA GAME TABLE INTEGRATION START -->
+<script>
+// Интеграция премиум-стилей для игрового стола
+const aaaaTableStyles = `
+/* --- AAAA Game Table Surface --- */
+.aaaa-table-surface {
+    position: relative;
+    background: radial-gradient(circle at center, #1a472a 0%, #0d2b18 40%, #05110a 100%);
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.8), 0 20px 50px rgba(0,0,0,0.5);
+    border-radius: 150px;
+    overflow: hidden;
+    border: 12px solid #2a1a0f;
+    box-shadow: 
+        inset 0 0 0 2px #4a3b2a,
+        0 0 0 4px #1a1a1a,
+        0 30px 60px rgba(0,0,0,0.6);
+}
 
+.aaaa-table-texture {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3h1v1H1V3zm2-2h1v1H3V1z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.aaaa-table-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%; height: 60%;
+    background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: tablePulse 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* --- AAAA Cards (Holographic) --- */
+.aaaa-card {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    border-radius: 12px;
+    box-shadow: 
+        0 4px 8px rgba(0,0,0,0.3),
+        inset 0 0 0 1px rgba(255,255,255,0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27), box-shadow 0.3s;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.aaaa-card::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(
+        45deg, 
+        transparent 40%, 
+        rgba(255,255,255,0.4) 45%, 
+        rgba(255,255,255,0.6) 50%, 
+        transparent 55%
+    );
+    transform: rotate(30deg) translateX(-100%);
+    transition: transform 0.6s;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+.aaaa-card:hover {
+    transform: translateY(-10px) scale(1.05) rotateZ(2deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(255,215,0,0.3);
+}
+
+.aaaa-card:hover::after {
+    transform: rotate(30deg) translateX(100%);
+}
+
+.aaaa-card-back {
+    background: repeating-linear-gradient(
+        45deg,
+        #b91d1d,
+        #b91d1d 10px,
+        #991515 10px,
+        #991515 20px
+    );
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* --- AAAA Chips (Metallic) --- */
+.aaaa-chip {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffd700, #b8860b);
+    border: 4px dashed #fff;
+    box-shadow: 
+        0 5px 10px rgba(0,0,0,0.5),
+        inset 0 0 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #5c4003;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s;
+}
+
+.aaaa-chip::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.aaaa-chip:hover {
+    transform: scale(1.2) rotate(15deg);
+    z-index: 20;
+}
+
+/* --- Animations --- */
+@keyframes tablePulse {
+    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.9); }
+    50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes cardDeal {
+    0% { transform: translateY(-200px) scale(0.5) rotate(180deg); opacity: 0; }
+    60% { transform: translateY(10px) scale(1.1) rotate(-5deg); opacity: 1; }
+    100% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+}
+
+.aaaa-deal-anim {
+    animation: cardDeal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* --- Pot Display --- */
+.aaaa-pot-display {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,215,0,0.3);
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: #ffd700;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px rgba(255,215,0,0.2);
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+`;
+
+// Внедрение стилей
+const styleSheet = document.createElement("style");
+styleSheet.innerText = aaaaTableStyles;
+document.head.appendChild(styleSheet);
+
+// Функция обновления таблицы на премиум
+function upgradeToAAAATable() {
+    const tableContainer = document.querySelector('.game-table') || document.querySelector('#poker-table');
+    if (!tableContainer) {
+        console.log("AAAA: Таблица не найдена, ждем рендера...");
+        setTimeout(upgradeToAAAATable, 500);
+        return;
+    }
+
+    // Добавляем классы поверхности
+    if (!tableContainer.classList.contains('aaaa-table-surface')) {
+        tableContainer.classList.add('aaaa-table-surface');
+        
+        // Добавляем текстуру и свечение
+        const texture = document.createElement('div');
+        texture.className = 'aaaa-table-texture';
+        tableContainer.appendChild(texture);
+
+        const glow = document.createElement('div');
+        glow.className = 'aaaa-table-glow';
+        tableContainer.appendChild(glow);
+    }
+
+    // Обновляем карты
+    document.querySelectorAll('.card, .playing-card').forEach(card => {
+        if (!card.classList.contains('aaaa-card')) {
+            card.classList.add('aaaa-card');
+            // Добавляем случайную задержку анимации при появлении
+            if (!card.style.animationDelay) {
+                card.style.animationDelay = Math.random() * 0.2 + 's';
+            }
+        }
+    });
+
+    // Обновляем фишки
+    document.querySelectorAll('.chip, .game-chip').forEach(chip => {
+        if (!chip.classList.contains('aaaa-chip')) {
+            chip.classList.add('aaaa-chip');
+        }
+    });
+
+    console.log("AAAA: Игровой стол обновлен до премиум-класса!");
+}
+
+// Запуск после загрузки
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', upgradeToAAAATable);
+} else {
+    upgradeToAAAATable();
+}
+
+// Интерцептор создания карт для будущих анимаций
+const originalCreateCard = window.createCardElement || null;
+window.createCardElement = function(rank, suit, isHidden) {
+    let card;
+    if (originalCreateCard) {
+        card = originalCreateCard(rank, suit, isHidden);
+    } else {
+        // Fallback если оригинальной функции нет
+        card = document.createElement('div');
+        card.className = 'card ' + (isHidden ? 'card-back' : '');
+        card.innerHTML = isHidden ? '' : `${rank}${suit}`;
+    }
+    
+    if (card) {
+        card.classList.add('aaaa-card');
+        if (!isHidden) card.classList.add('aaaa-deal-anim');
+    }
+    return card;
+};
+</script>
+
+<script>
+(function() {
+    console.log("🚀 Initializing AAAA Particle System & Magnetic UI...");
+
+    // 1. Dynamic Particle Canvas Injection
+    const createParticleCanvas = () => {
+        const canvas = document.createElement('canvas');
+        canvas.id = 'aaaa-particle-canvas';
+        canvas.style.position = 'fixed';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '0';
+        canvas.style.opacity = '0.6';
+        document.body.insertBefore(canvas, document.body.firstChild);
+        return canvas;
+    };
+
+    const canvas = createParticleCanvas();
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let width, height;
+
+    const resize = () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+        constructor() {
+            this.reset();
+        }
+        reset() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.size = Math.random() * 2 + 0.5;
+            this.alpha = Math.random() * 0.5 + 0.1;
+            this.fade = Math.random() > 0.5 ? 0.002 : -0.002;
+        }
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            this.alpha += this.fade;
+            if (this.alpha <= 0 || this.alpha >= 0.8) this.fade *= -1;
+            if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(100, 200, 255, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 100; i++) particles.push(new Particle());
+
+    const animateParticles = () => {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateParticles);
+    };
+    animateParticles();
+
+    // 2. Magnetic 3D Buttons Logic
+    const initMagneticButtons = () => {
+        const buttons = document.querySelectorAll('.aaaa-btn, .btn-primary, .shop-buy-btn');
+        buttons.forEach(btn => {
+            btn.style.transition = 'transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease';
+            btn.style.position = 'relative';
+            btn.style.overflow = 'hidden';
+            
+            // Add glow layer
+            const glow = document.createElement('div');
+            glow.style.position = 'absolute';
+            glow.style.top = '0';
+            glow.style.left = '0';
+            glow.style.width = '100%';
+            glow.style.height = '100%';
+            glow.style.background = 'radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, transparent 70%)';
+            glow.style.opacity = '0';
+            glow.style.transform = 'translate(-50%, -50%) scale(0.5)';
+            glow.style.pointerEvents = 'none';
+            btn.appendChild(glow);
+
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                btn.style.transform = `perspective(1000px) rotateX(${y * 0.05}deg) rotateY(${x * 0.05}deg) translateZ(5px)`;
+                glow.style.opacity = '1';
+                glow.style.left = `${(x / rect.width * 100) + 50}%`;
+                glow.style.top = `${(y / rect.height * 100) + 50}%`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                glow.style.opacity = '0';
+            });
+
+            btn.addEventListener('click', () => {
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    btn.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                }, 100);
+            });
+        });
+    };
+
+    // Run after DOM load or retry if not ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMagneticButtons);
+    } else {
+        initMagneticButtons();
+    }
+    
+    // Re-run when shop/menu opens (dynamic content)
+    const observer = new MutationObserver(() => {
+        initMagneticButtons();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+})();
 </script>
 </body>
 </html>
-
-// === v6.17 AUDIT_FIX_PACK ===
-// Dedup: detectHand/initGame/genShop · Console silencer
-window.PC_VERSION='6.17';
